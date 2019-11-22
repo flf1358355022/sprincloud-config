@@ -9,7 +9,7 @@ server:
 spring:
     profiles: dev  #开发环境
     application:
-        name: springCloud-config-client
+        name: application-config-client
 eureka:
     client:
         service-url:
@@ -21,7 +21,7 @@ server:
 spring:
     profiles: test  #开发环境
     application:
-        name: springCloud-config-client
+        name: application-config-client
 eureka:
     client:
         service-url:
