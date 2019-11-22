@@ -11,7 +11,7 @@ spring:
         name: application-config-dept-provider-client   #暴露服务的生产者昵称
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件所在路
-  type-aliases-package: com.baizhi.springcloud.entities  #所在实体类路径
+  type-aliases-package: com.baizhi.springcloud.entities  #所在实体类路径#
   mapper-locations: classpath:mybatis/mapper/**/*.xml
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
