@@ -4,15 +4,11 @@ spring:
         - dev      
 ---
 server:
-    port: 8001
+  port: 8001
 spring:
-    profiles: dev #开发环境
-    application:
-        name: application-config-dept-provider-client   #暴露服务的生产者昵称
-mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件所在路
-  type-aliases-package: com.baizhi.springcloud.entities  #所在实体类路径#
-  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  profiles: dev  #开发环境
+  application:
+    name: application-config-dept-provider-client
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
@@ -23,7 +19,11 @@ mybatis:
       min-idle: 5                                           # 数据库连接池的最小维持连接数
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
-      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+      max-wait-millis: 200    
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件所在路
+  type-aliases-package: com.baizhi.springcloud.entities  #所在实体类路径#
+  mapper-locations: classpath:mybatis/mapper/**/*.xml      # 等待连接获取的最大超时时间
 eureka:
   client:
     service-url:
@@ -39,15 +39,11 @@ info:
   build.version: $project.version$
 ---
 server:
-    port: 8002
+  port: 8002
 spring:
-    profiles: test  #测试环境 
-    application:
-        name: application-config-dept-provider-client   #暴露服务的生产者昵称
-mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件所在路
-  type-aliases-package: com.baizhi.springcloud.entities  #所在实体类路径
-  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  profiles: test  #测试环境
+  application:
+    name: application-config-dept-provider-client
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
@@ -58,13 +54,17 @@ mybatis:
       min-idle: 5                                           # 数据库连接池的最小维持连接数
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
-      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+      max-wait-millis: 200    
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件所在路
+  type-aliases-package: com.baizhi.springcloud.entities  #所在实体类路径#
+  mapper-locations: classpath:mybatis/mapper/**/*.xml      # 等待连接获取的最大超时时间
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka7001.com:7001/eureka   #将客户端注册得到注册中心[单机版]
+      defaultZone: http://eureka7001.com:7001/eureka    #将客户端注册得到注册中心[单机版]
   instance:
-    instance-id: springCloud-dept8002
+    instance-id: springCloud-dept8001
     prefer-ip-address: true   #访问路径可以显示ip地址
 #配置注册中心中服务提供者的信息
 info:
@@ -72,4 +72,3 @@ info:
   company.name: www.baizhi.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
-
