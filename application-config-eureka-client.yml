@@ -9,8 +9,6 @@ spring:
     profiles: dev  #开发环境
     application:
         name: application-config-eureka-client
-server:
-  port: 7001
 eureka:
   instance:
     hostname: eureka7001.com  #[集群版]
