@@ -9,7 +9,7 @@ spring:
         name: springCloud-config-dev
         
 ---
-Spring:
+spring:
     profiles: test #测试环境
     application:
         name: springCloud-config-test
