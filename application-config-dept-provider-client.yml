@@ -8,7 +8,7 @@ server:
 spring:
     profiles: dev #开发环境
     application:
-    name: application-config-dept-provider-client   #暴露服务的生产者昵称
+        name: application-config-dept-provider-client   #暴露服务的生产者昵称
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件所在路
   type-aliases-package: com.baizhi.springcloud.entities  #所在实体类路径
@@ -43,7 +43,7 @@ server:
 spring:
     profiles: test  #测试环境 
     application:
-    name: application-config-dept-provider-client   #暴露服务的生产者昵称
+        name: application-config-dept-provider-client   #暴露服务的生产者昵称
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件所在路
   type-aliases-package: com.baizhi.springcloud.entities  #所在实体类路径
