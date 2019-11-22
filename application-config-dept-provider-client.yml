@@ -5,7 +5,6 @@ spring:
 ---
 server:
   port: 8001
-
 spring:
     profiles:
         active: dev #开发环境
