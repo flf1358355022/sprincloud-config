@@ -6,8 +6,7 @@ spring:
 server:
     port: 8001
 spring:
-    profiles:
-        active: dev #开发环境
+    profiles: dev #开发环境
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件所在路
   type-aliases-package: com.baizhi.springcloud.entities  #所在实体类路径
@@ -43,8 +42,7 @@ info:
 server:
     port: 8002
 spring:
-    profiles:
-        active: test #测试环境  
+    profiles: test  #测试环境 
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件所在路
   type-aliases-package: com.baizhi.springcloud.entities  #所在实体类路径
