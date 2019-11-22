@@ -1,8 +1,7 @@
 spring:
     profiles:
         active: 
-        - dev
-        
+        - dev      
 ---
 server:
   port: 8001
@@ -48,7 +47,6 @@ info:
   company.name: www.baizhi.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
-  
 ---
 server:
   port: 8002
