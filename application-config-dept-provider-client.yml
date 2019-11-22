@@ -9,38 +9,32 @@ server:
 spring:
     profiles:
         active: dev #开发环境
-
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件所在路
   type-aliases-package: com.baizhi.springcloud.entities  #所在实体类路径
   mapper-locations: classpath:mybatis/mapper/**/*.xml
-
 spring:
   application:
     name: springcloud-provider   #暴露服务的生产者昵称
-
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
     url: jdbc:mysql://localhost:3306/cloudDB01
     username: root
     password: root
-
   dbpc2:
     min-idle: 5                                           # 数据库连接池的最小维持连接数
     initial-size: 5                                       # 初始化连接数
     max-total: 5                                          # 最大连接数
     max-wait-millis: 200                                  # 等待连接获取的最大超时时间
-
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7001/eureka   #将客户端注册得到注册中心[单机版]
+      defaultZone: http://eureka7001.com:7001/eureka    #将客户端注册得到注册中心[单机版]
       #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/ #[集群版]
   instance:
     instance-id: springCloud-dept8001
     prefer-ip-address: true   #访问路径可以显示ip地址
-
 #配置注册中心中服务提供者的信息
 info:
   app.name: springcloud-provider
@@ -50,42 +44,35 @@ info:
 ---
 server:
   port: 8002
-
 spring:
     profiles:
-        active: test #测试环境
-        
+        active: test #测试环境  
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件所在路
   type-aliases-package: com.baizhi.springcloud.entities  #所在实体类路径
   mapper-locations: classpath:mybatis/mapper/**/*.xml
-
 spring:
   application:
     name: springcloud-provider   #暴露服务的生产者昵称
-
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
     url: jdbc:mysql://localhost:3306/cloudDB02
     username: root
     password: root
-
   dbpc2:
     min-idle: 5                                           # 数据库连接池的最小维持连接数
     initial-size: 5                                       # 初始化连接数
     max-total: 5                                          # 最大连接数
     max-wait-millis: 200                                  # 等待连接获取的最大超时时间
-
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7001/eureka   #将客户端注册得到注册中心[单机版]
+      defaultZone: http://eureka7001.com:7001/eureka   #将客户端注册得到注册中心[单机版]
       #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/ #[集群版]
   instance:
     instance-id: springCloud-dept8002
     prefer-ip-address: true   #访问路径可以显示ip地址
-
 #配置注册中心中服务提供者的信息
 info:
   app.name: springcloud-provider
